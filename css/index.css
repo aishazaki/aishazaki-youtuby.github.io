@@ -1,0 +1,189 @@
+@font-face{
+    font-family: "cairoFont";
+    src: url(../fonts/Cairo-Regular.ttf);
+}
+/*تكتب قواعد التنسيق العامة بالاعلى اولا 
+ مثل بدي و الرابط التشعبي اية وزر بوتون لكي تطبق على جميع الصفحات*/
+body{
+    font-family:"cairoFont", Arial, sans-serif ;
+    background-color: #fafafa;
+}
+a{
+    color: #000;
+    text-decoration: none !important;
+}
+button{
+    background-color: transparent !important; /*اي شفاف لكي ياخذ نفس لون خلفية العنصر الاب*/
+    color: #bf40bf !important;
+    border-color: #bf40bf !important;
+}
+button:hover{
+    background-color: #bf40bf !important;
+    color: #fff !important;
+}
+#top-menu .bg-light{
+    background-color: #fff !important;
+}
+/*  يجب اضافة كلمة  important
+حتى يفهم ان القيمة التي اعطيناها له هنا اهم من القيمة الافتراضية التي وضعها بوتستراب */
+
+#top-menu .video-icon{
+    background-color: #bf40bf;
+    color: #fff;
+    border-radius: 15%;
+}
+.navbar .navbar-nav .nav-link:hover, .navbar .navbar-nav .active>.nav-link{
+    background-color: #bf40bf;
+    color: #fff;
+}
+.navbar .login{
+    color: #bf40bf;
+}
+.modal .modal-header .close:hover{
+    background-color: transparent !important;
+    color: #bf40bf !important;
+}
+input.form-control:focus,
+button:focus{
+    box-shadow: none !important;
+}/*اي جميع حقول الادخال ذات الصنف فورم كونترول و الازرار عندما يتم
+ التركيز او الضغط عليها :احذف الظل من حقول  البحث والازرارعند الضغط عليها */
+.card .card-icons{
+    position: relative;
+}
+time{
+    position: absolute;
+    bottom: 10px;
+    left: 7px;
+    color: #fff;
+    background-color: #000;
+    padding: 0px 3px;
+}
+.card .fa-play{
+    position: absolute;
+    top: 43%;
+    right: 41%;
+    color: #2c3131c7;
+    display: none; /*لكي تبقى الايقونة مخفية الا عند مرور مؤشر الفارة على البطاقة مما يسبب في ظهورها*/
+}
+.card:hover .fa-play{
+    display: inline;/*حتى تهر الايقونةعند مرور مؤشر الفارة على البطاقة */
+}
+.card:hover {
+    transform: translateY(-.9%);
+}/*transform تفيد خاصية الانتقال في تحريك العنصر للاعلى ولذلك اعطيناه قيمة سالبة 
+الا انها تحركة بشكل سريع وغير جميل لذلك سوف نضيف الخاصية ترانسيشن*/
+.card{
+    transition: transform 0.50;
+}/* transition وهي خاصية تتيح تغيير قيم و قواعد تنسيق العنصر بشكل انسيابي 
+من خلال تحديد 1-الخاصية التي نريد التطبيق عليها وهى هنا ترانسفورم التى تحرك العنصر 
+لاعلى 2-تحديد الوقت وهى 0.5 ثانية*/
+.card .card-title{
+    height: 50px;
+    overflow: hidden;
+}
+#top-menu .fa-bars{
+    cursor: pointer;
+}
+.sidebar{
+    position: fixed;
+    z-index: 4;/*to appear above the another tags in page*/
+    right: -17rem;/*حتى تكون القائمة مخفية عندحميل الصفحة */
+    transition: all 0.5s ease-in-out;
+    height: 100%;/*لتظهر بنفس طول الصفحة ولكي نتمكن من اضافة شريط التمرير*/
+    background-color: #fff;
+    overflow: hidden;/*حتى يضمن اخفاء العناصر التى تمتد بعد طول 100%*/
+    padding-bottom: 60px; /*حتى يظهر  العنصر  الاخير من القائمة  بشكل جيد*/
+}
+.sidebar:hover{
+    overflow-y: scroll;/* overflow-y تحديد ماذا سنفعل بالجزء الطافح بشكل طولي */
+    /*حتى يظهر شريط التمرير بشكل شاقولي ايعلى محور ص*/
+}
+.sidebar .purple{
+    color: #bf40bf;
+}
+.sidebar .list-group-item:hover{
+    background-color: #bf40bf;
+    color: #fff;
+}
+.sidebar .list-group-item:hover .purple{
+    color: #fff;
+}
+.sidebar .list-group-item{
+    width: 17rem;
+}
+#wrap.toggled .sidebar{
+    right:0rem
+}/*عندما يكون الصنف تقلد موجود في القائمة ذات  المعرف راب 
+طبق التغييرات على الصنف سايدبار*/
+.sidebar::-webkit-scrollbar{/*تنسيق خلفية شريط التمرير*/
+    width: 8px;
+    background: rgb(230, 230, 230);
+}
+.sidebar::-webkit-scrollbar-thumb{/*تنسيق الشريط ذات نفسة*/
+    background: rgb(179, 179, 179);
+    width: 8px;
+}
+.layer{
+    position: fixed;
+    height: 100vh;/*vh=view height ...تظهر على كامل ارتفاع الشاشة  */
+    width: 100%;
+    top: 0;
+    background-color: rgb(0, 0, 0,0.5);
+    z-index: 3;/*حتى تظهر فوق جميعالعناصر في  الصفحة ،واسفل القائمة الجانبية*/
+    display: none;/*حتى تكون مخفية عند تحميل  الصفحة والباقينكتبة باستخدام جافاسكريب*/
+}
+.navbar .search-icon{
+    color: #bf40bf;
+    cursor: pointer;
+    padding: 15px 10px;
+    position: absolute;
+    top: 15px;
+    left: 132px;
+    display: none;
+}
+.navbar .search-icon:hover{
+    color: #fff;
+    background-color: #bf40bf;
+}
+.search-input{
+    position: fixed;
+    top: 72px;
+    border: none;
+    padding: 6px 23px;
+    height: 60px;
+    background-color: #efeeee;
+    display: none;
+    z-index: 1;
+}
+.container-fluid{
+    padding: 0px;
+    overflow: hidden;
+}
+.search-input:focus{
+    background-color: #efeeee;
+}
+.card .card-horizontal .card-body p{
+    white-space: nowrap;/*لمنع النزول لسطر جديد والاكتفاء بسطر واحد*/
+    overflow:hidden;/*لاخفاء المحتوى  الزائد*/
+    text-overflow:ellipsis ;/*لاظهار النقاط الثلاثة قبل اختفاء النص*/
+}
+.card-body{
+    min-width: 0;
+}
+/*دائما نكتب شيفرة media query في نهاية ملف css*/
+
+@media (max-width: 1115px) {
+    /*اخفاء حقل البحث الموجود في القائمة العلوية*/
+    .navbar .collapse .form-inline{
+        display: none;
+    }
+    .navbar .search-icon{
+        display: inline;/*اظهارايقونةالبحث*/
+    }
+}
+@media (min-width: 1115px){
+    .search-input{
+        display: none !important;/*حتى نخفي حقل البحث في الشاشات الكبيرة الذي فتح بواسطةالايقونة في الشاشات الصغيرة*/
+    }
+}

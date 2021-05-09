@@ -1,0 +1,52 @@
+
+#search-filter-icon {
+    cursor: pointer;
+}
+.search-header .filter-column{
+    display: none;
+}
+input:checked+span{
+    color: #bf40bf;
+}/*حدد الحاوية سبان التي بعد صندوق لتاشير الذي تم تحديدة*/
+time{
+    bottom: 7px; ;
+    left: 29px;
+}
+/*  لكي لا نضطر لكتابتها في صفحات اخرى كصفحة سجل المشاهدة قمنا بنقلها الى ملف اندكس.سي اس اس
+.card .card-horizontal .card-body p{
+    white-space: nowrap لمنع النزول لسطر جديد والاكتفاء بسطر واحد
+    overflow: hidden لاخفاء المحتوى  الزائد
+    text-overflow:ellipsis ;لاظهار النقاط الثلاثة قبل اختفاء النص
+} */
+/* لم تعمل الخاصية overflow
+وذلك بسبب ان الحاوية الاب لها الصنف فلكس من بروستراب ولحل المشكلة يجب اعطاء عرض ادنى للحاوية الابن */
+.card-body{
+    min-width: 0;
+}
+/*لتنسيق وضع الايقونات ع  الفيديو في الشاشات الصغيرة*/
+@media(max-width:767px){
+    .card .card-top-image{
+        width:100% ;
+    }
+    .card .card-horizontal time{
+        left: 10px;
+    }
+    .card .card-horizontal .fa-play{
+        right: 48%;
+    }
+}
+@media (min-width:768px) and (max-width:992px){
+    .card .card-horizontal .card-body .channel-img{
+        display: block;
+        margin-top: 10px;
+    }
+    .card .card-horizontal .channel-img>img{
+        margin-right: 0px !important;
+    }
+    h4{
+        overflow: hidden;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+    }
+}

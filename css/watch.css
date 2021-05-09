@@ -1,0 +1,58 @@
+.card:hover{
+    transform: translateY(0%);
+}/*لمنع البطاقةمن التحرك وذلك بسبب التنسيق الذي ورثته من ملف index.css*/
+.watch-page .watch-icons{
+    position: absolute;/*وضع الايقونات اسفل الفيديو*/
+    bottom: 5px;
+    right: 20px;
+}
+.watch-icons i:hover{
+    cursor: pointer;
+}
+.watch-page #more{
+    display: none;/*to hide the text in card paragraph*/
+}
+.form-control:focus{
+    box-shadow: none;
+}
+.card-inner{
+    display: none;
+}
+.public-comments .card .btn{
+    background-color: #921192;
+    border-color: #921192;
+    color: #fff;
+}
+.public-comments .card .btn:hover{
+    background-color: #b915b9;
+}
+time{
+    left: 24px !important;
+}
+.watch-page .fa-play{
+    right:46% !important;
+}
+@media ( min-width: 992px){
+    /* لتصغيرهم*/
+    .fa-play{
+        font-size: 20px  !important;
+    }
+    time{
+        font-size: 13 px;
+    }
+}
+@media ( max-width: 1062px) {
+    #myBtn{
+        margin-bottom: 60px !important;
+    }
+}
+@media ( max-width: 554px) {
+    .rely-time {
+        font-size: 10px !important;
+        color: rgb(15, 206, 142);
+    } 
+   /*  .text-secondary{
+        font-size: 10px !important;
+        color: brown;
+    } */
+}
